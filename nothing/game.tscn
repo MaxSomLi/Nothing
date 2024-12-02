@@ -1,0 +1,102 @@
+[gd_scene load_steps=16 format=3 uid="uid://cetjdn7bwfr83"]
+
+[ext_resource type="Script" path="res://game.gd" id="1_2j2vl"]
+[ext_resource type="Texture2D" uid="uid://r0ylbflxlhtc" path="res://pieces/B_Bishop.png" id="2_lxsk8"]
+[ext_resource type="Texture2D" uid="uid://du4xc3bn36bhi" path="res://pieces/B_King.png" id="3_0db63"]
+[ext_resource type="Texture2D" uid="uid://dm4j3wwi7jmly" path="res://pieces/B_Knight.png" id="4_l8i2g"]
+[ext_resource type="Texture2D" uid="uid://de57u87n6tp1r" path="res://pieces/B_Pawn.png" id="5_0k2i1"]
+[ext_resource type="Texture2D" uid="uid://dbwrhh25ue1oa" path="res://pieces/B_Queen.png" id="6_vc0ns"]
+[ext_resource type="Texture2D" uid="uid://c7ce4ph33hho4" path="res://pieces/B_Rook.png" id="7_pkb1o"]
+[ext_resource type="Texture2D" uid="uid://bx1uakrx6ekuf" path="res://pieces/W_Bishop.png" id="8_cdjcv"]
+[ext_resource type="Texture2D" uid="uid://cgeqhjgx1cxmb" path="res://pieces/W_King.png" id="9_0s7dg"]
+[ext_resource type="Texture2D" uid="uid://b6hjkwqtwglig" path="res://pieces/W_Knight.png" id="10_qeqrx"]
+[ext_resource type="Texture2D" uid="uid://dr35xtht4rnls" path="res://pieces/W_Pawn.png" id="11_8c7uy"]
+[ext_resource type="Texture2D" uid="uid://c3bnkng4eluvn" path="res://pieces/W_Queen.png" id="12_s8ybs"]
+[ext_resource type="Texture2D" uid="uid://b7xrg4r8sw2du" path="res://pieces/W_Rook.png" id="13_asi47"]
+[ext_resource type="Texture2D" uid="uid://cdtd4ag4jey0q" path="res://pieces/W_Cat.png" id="14_1jk60"]
+[ext_resource type="Texture2D" uid="uid://d33hah5lnfyp3" path="res://pieces/B_Cat.png" id="15_m1ldb"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_2j2vl")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="BBishop" type="Sprite2D" parent="."]
+position = Vector2(-450, -250)
+texture = ExtResource("2_lxsk8")
+
+[node name="BKing" type="Sprite2D" parent="."]
+position = Vector2(-450, -200)
+texture = ExtResource("3_0db63")
+
+[node name="BKnight" type="Sprite2D" parent="."]
+position = Vector2(-400, -150)
+texture = ExtResource("4_l8i2g")
+
+[node name="BPawn" type="Sprite2D" parent="."]
+position = Vector2(-450, -150)
+texture = ExtResource("5_0k2i1")
+
+[node name="BQueen" type="Sprite2D" parent="."]
+position = Vector2(-400, -200)
+texture = ExtResource("6_vc0ns")
+
+[node name="BRook" type="Sprite2D" parent="."]
+position = Vector2(-400, -250)
+texture = ExtResource("7_pkb1o")
+
+[node name="WBishop" type="Sprite2D" parent="."]
+position = Vector2(450, -250)
+texture = ExtResource("8_cdjcv")
+
+[node name="WKing" type="Sprite2D" parent="."]
+position = Vector2(450, -200)
+texture = ExtResource("9_0s7dg")
+
+[node name="WKnight" type="Sprite2D" parent="."]
+position = Vector2(400, -150)
+texture = ExtResource("10_qeqrx")
+
+[node name="WPawn" type="Sprite2D" parent="."]
+position = Vector2(450, -150)
+texture = ExtResource("11_8c7uy")
+
+[node name="WQueen" type="Sprite2D" parent="."]
+position = Vector2(400, -200)
+texture = ExtResource("12_s8ybs")
+
+[node name="WRook" type="Sprite2D" parent="."]
+position = Vector2(400, -250)
+texture = ExtResource("13_asi47")
+
+[node name="WCat" type="Sprite2D" parent="."]
+position = Vector2(425, -100)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("14_1jk60")
+
+[node name="BCat" type="Sprite2D" parent="."]
+position = Vector2(-425, -100)
+scale = Vector2(0.14, 0.14)
+texture = ExtResource("15_m1ldb")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 400.0
+offset_top = 200.0
+offset_right = 500.0
+offset_bottom = 232.0
+text = "PLAY"
+
+[node name="OptionButton" type="OptionButton" parent="."]
+offset_left = 400.0
+offset_top = 50.0
+offset_right = 500.0
+offset_bottom = 82.0
+selected = 0
+item_count = 2
+popup/item_0/text = "White"
+popup/item_1/text = "Black"
+popup/item_1/id = 1
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
